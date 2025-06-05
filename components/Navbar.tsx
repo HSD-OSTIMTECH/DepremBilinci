@@ -15,7 +15,7 @@ const Navbar = () => {
     <nav className='py-6 flex items-center justify-between'>
 
         <div className='flex items-center gap-2'>
-            <img src="Logos/Logo.png" alt="icon for logo" />
+            <img src="/Logos/Logo.png" alt="icon for logo" />
             <span className='text-lg font-bold text-primary'>DepremBilinci</span>
         </div>
 
@@ -45,6 +45,10 @@ const Navbar = () => {
 
                     <DropdownMenuItem>
                         <a href="/egitim/ogretmenler">Öğretmenler</a>
+                    </DropdownMenuItem>
+
+                    <DropdownMenuItem>
+                        <a href="/egitim/testler">Testler</a>
                     </DropdownMenuItem>
 
                 </DropdownMenuContent>
