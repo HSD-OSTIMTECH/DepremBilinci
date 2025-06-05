@@ -4,4 +4,12 @@
 
 @theme {
     --font-nunito:"Nunito", sans-serif;
+    --color-primary:#47573D;
+    --color-sage:#99BC85;
+    --color-background:#FDFAF6;
+
+}
+
+body{
+    background-color: var(--color-background);
 }

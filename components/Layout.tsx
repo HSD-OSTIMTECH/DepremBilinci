@@ -10,7 +10,7 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <>
+    <div className="font-nunito max-w-6xl container mx-auto">
         <Navbar />
 
         <Toaster 
@@ -23,7 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
 
         <Footer />
 
-    </>
+    </div>
   )
 }
 
