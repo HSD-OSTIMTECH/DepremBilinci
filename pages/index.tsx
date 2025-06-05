@@ -3,7 +3,7 @@ import {
   PiChalkboardTeacherBold,
   PiUsersThreeBold,
 } from "react-icons/pi";
-import { FaChild } from "react-icons/fa";
+import { FaChild, FaCode, FaPencilRuler, FaShareAlt } from "react-icons/fa";
 
 import GithubAction from "@/components/GithubAction";
 
@@ -12,7 +12,7 @@ export default function Home() {
     <div className="my-24">
 
         {/*Hero Section*/}
-        <section className="flex flex-col items-center justify-center px-4 text-center">
+        <section className="flex flex-col items-center justify-center px-4 text-center py-32">
           <h1 className="text-2xl md:text-4xl font-bold text-primary mb-4">
             Depremlere Bilinçli Hazırlık, Herkes İçin<br />Erişilebilir Eğitimle Mümkün.
           </h1>
@@ -41,7 +41,7 @@ export default function Home() {
         </section>
 
         {/* Eğitim Kataloğumuz*/}
-        <section className="py-32">
+        <section className="py-48">
 
           <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-2">Eğitim Kataloğumuz</h2>
           <p className="text-neutral-700 mb-8">
@@ -101,6 +101,52 @@ export default function Home() {
 
         {/*Bu Platform Nedir?*/}
         <GithubAction/>
+
+        {/* Destek Olun */}
+        <section className="px-4 py-32">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Sol metin alanı */}
+            <div>
+              <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-3">Sen de Destek Ol!</h2>
+              <p className="text-neutral-700 mb-6">
+                Açık kaynaklı bu platform herkesin katkısına açık. Kod yazabilir, içerik üretebilir ya da sadece paylaşarak destek olabilirsin.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://github.com/hsd-ostimtech/deprembilinci"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-primary text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition"
+                >
+                  GitHub’da Yıldızla
+                </a>
+                <a
+                  href="/katki/genel-rehber"
+                  className="border border-primary text-primary px-6 py-2 rounded-md hover:bg-gray-100 transition"
+                >
+                  Katkı Rehberini İncele
+                </a>
+              </div>
+            </div>
+
+            {/* Sağ ikonlu destek alanı */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 border rounded-md px-4 py-3">
+                <FaCode className="text-primary text-xl" />
+                <span className="font-medium text-[#2e3a59]">Kod Yaz!</span>
+              </div>
+              <div className="flex items-center gap-3 border rounded-md px-4 py-3">
+                <FaPencilRuler className="text-primary text-xl" />
+                <span className="font-medium text-[#2e3a59]">Tasarla!</span>
+              </div>
+              <div className="flex items-center gap-3 border rounded-md px-4 py-3">
+                <FaShareAlt className="text-primary text-xl" />
+                <span className="font-medium text-[#2e3a59]">Yayınlaştır!</span>
+              </div>
+            </div>
+          </div>
+        </section>
 
     </div>
   );

@@ -19,7 +19,7 @@ const GithubAction: React.FC = () => {
   }, []);
 
   return (
-    <div className="px-4 py-12 flex flex-col md:flex-row items-center justify-between">
+    <div className="px-4 py-32 flex flex-col md:flex-row items-center justify-between">
 
       {/* Üyelerin avatarları */}
       <div className="flex flex-wrap gap-4 mb-8">
