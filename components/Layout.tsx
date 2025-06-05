@@ -10,14 +10,14 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="font-nunito max-w-6xl container mx-auto">
+    <div className="min-h-screen flex flex-col font-nunito max-w-6xl container mx-auto">
         <Navbar />
 
         <Toaster 
           position="top-center"
         />
 
-        <main>
+        <main className="flex-grow">
             {children}
         </main>
 
