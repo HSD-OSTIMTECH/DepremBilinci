@@ -1,0 +1,126 @@
+[
+  {
+    "kategori": "ogrenci",
+    "testAdi": "Deprem Bilinci Testi - Öğrenciler 1",
+    "sorular": [
+      {
+        "soru": "Deprem sırasında sınıfta bulunuyorsan ne yapmalısın?",
+        "secenekler": ["Camdan dışarı bakmak", "Koşarak dışarı çıkmak", "Sıra altına girip başını korumak", "Telefonla oynamak"],
+        "dogru": "Sıra altına girip başını korumak"
+      },
+      {
+        "soru": "Deprem çantasında bulunması gerekenlerden biri aşağıdakilerden hangisidir?",
+        "secenekler": ["Tablet", "Yedek kıyafet", "Krem", "Kitap"],
+        "dogru": "Yedek kıyafet"
+      },
+      {
+        "soru": "Deprem öncesi yapılması gereken hazırlıklardan biri nedir?",
+        "secenekler": ["Televizyonu açık bırakmak", "Mobilyaları sabitlemek", "Pencereleri açmak", "Tavanı boyamak"],
+        "dogru": "Mobilyaları sabitlemek"
+      },
+      {
+        "soru": "Deprem sonrasında ilk yapılması gereken nedir?",
+        "secenekler": ["Elektriği açmak", "Panik yapmak", "Hasarlı binalardan uzak durmak", "Asansöre binmek"],
+        "dogru": "Hasarlı binalardan uzak durmak"
+      },
+      {
+        "soru": "Deprem sırasında dışarıdaysan ne yapmalısın?",
+        "secenekler": ["Binalara yaklaşmak", "Araçların altına saklanmak", "Açık bir alana gitmek", "Ağaçlara sarılmak"],
+        "dogru": "Açık bir alana gitmek"
+      }
+    ]
+  },
+  {
+    "kategori": "ebeveyn",
+    "testAdi": "Deprem Bilinci Testi - Ebeveynler 1",
+    "sorular": [
+      {
+        "soru": "Evde çocuklar için en güvenli deprem alanı neresidir?",
+        "secenekler": ["Balkon", "Pencere önü", "İç duvar köşesi", "Asansör"],
+        "dogru": "İç duvar köşesi"
+      },
+      {
+        "soru": "Deprem sonrasında ailece toplanma yeri ne zaman belirlenmelidir?",
+        "secenekler": ["Depremden sonra", "Acil durum öncesinde", "Hiç gerek yok", "Polis gelince"],
+        "dogru": "Acil durum öncesinde"
+      },
+      {
+        "soru": "Deprem sonrası çocuklara nasıl davranılmalıdır?",
+        "secenekler": ["Korkutularak", "Yalnız bırakılarak", "Güven verilerek", "Azarlanarak"],
+        "dogru": "Güven verilerek"
+      },
+      {
+        "soru": "Deprem çantasında çocuklar için ne bulunmalıdır?",
+        "secenekler": ["Oyuncak", "Deterjan", "Tablet", "Elbise dolabı"],
+        "dogru": "Oyuncak"
+      },
+      {
+        "soru": "Evde alınabilecek en temel önlem nedir?",
+        "secenekler": ["Asansör kullanımı", "Mobilya sabitleme", "Kapıları kilitlemek", "Tavanı alçaltmak"],
+        "dogru": "Mobilya sabitleme"
+      }
+    ]
+  },
+  {
+    "kategori": "ogretmen",
+    "testAdi": "Deprem Bilinci Testi - Öğretmenler 1",
+    "sorular": [
+      {
+        "soru": "Sınıfta deprem anında öğretmen olarak ilk yapmanız gereken nedir?",
+        "secenekler": ["Pencereleri açmak", "Öğrencileri korunaklı pozisyona yönlendirmek", "Kaçmak", "Telefonla yardım istemek"],
+        "dogru": "Öğrencileri korunaklı pozisyona yönlendirmek"
+      },
+      {
+        "soru": "Okul tatbikatları ne amaçla yapılır?",
+        "secenekler": ["Öğrencileri korkutmak", "Zaman geçirmek", "Hazırlıklı olmak", "Velileri çağırmak"],
+        "dogru": "Hazırlıklı olmak"
+      },
+      {
+        "soru": "Deprem sonrasında sınıfta öğrencilerle ne yapılmalıdır?",
+        "secenekler": ["Öğrencileri yalnız bırakmak", "Dışarı çıkmadan önce yoklama almak", "Kapıları kilitlemek", "Saklanmak"],
+        "dogru": "Dışarı çıkmadan önce yoklama almak"
+      },
+      {
+        "soru": "Deprem çantasında bulunması gereken önemli bir belge nedir?",
+        "secenekler": ["Fotoğraf albümü", "Kimlik fotokopisi", "Hediye kartı", "Karneler"],
+        "dogru": "Kimlik fotokopisi"
+      },
+      {
+        "soru": "Deprem sırasında elektrikli cihazlar ne yapılmalıdır?",
+        "secenekler": ["Açılmalı", "Kapatılmalı", "Yeniden başlatılmalı", "Oynanmalı"],
+        "dogru": "Kapatılmalı"
+      }
+    ]
+  },
+  {
+    "kategori": "cocuk",
+    "testAdi": "Deprem Bilinci Testi - Çocuklar 1",
+    "sorular": [
+      {
+        "soru": "Deprem olunca ne yapmalısın?",
+        "secenekler": ["Bağırarak koşmak", "Bir masanın altına saklanmak", "Pencereden bakmak", "Saklambaç oynamak"],
+        "dogru": "Bir masanın altına saklanmak"
+      },
+      {
+        "soru": "Deprem çantası ne işe yarar?",
+        "secenekler": ["Oyuncak çantasıdır", "İçinde kıyafet ve yiyecek olan acil çantadır", "Kitap çantasıdır", "Sırt çantasıdır"],
+        "dogru": "İçinde kıyafet ve yiyecek olan acil çantadır"
+      },
+      {
+        "soru": "Deprem sırasında en güvenli yer neresidir?",
+        "secenekler": ["Pencere önü", "Balkon", "Masa altı", "Kapı eşiği"],
+        "dogru": "Masa altı"
+      },
+      {
+        "soru": "Deprem tatbikatı neden yapılır?",
+        "secenekler": ["Oyun olsun diye", "Hazırlıklı olmak için", "Sınıfı temizlemek için", "Arkadaşlarla gülmek için"],
+        "dogru": "Hazırlıklı olmak için"
+      },
+      {
+        "soru": "Depremden sonra ne yapmalısın?",
+        "secenekler": ["Evde kalmak", "Eşyaları toplamaya çalışmak", "Açık alana çıkmak", "Televizyon izlemek"],
+        "dogru": "Açık alana çıkmak"
+      }
+    ]
+  }
+]
