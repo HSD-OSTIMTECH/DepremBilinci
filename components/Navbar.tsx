@@ -32,19 +32,19 @@ const Navbar = () => {
                 <DropdownMenuContent>
 
                     <DropdownMenuItem>
-                        <a href="/cocuk-egitim">Çocuklar</a>
+                        <a href="/egitim/cocuklar">Çocuklar</a>
                     </DropdownMenuItem>
 
                     <DropdownMenuItem>
-                        <a href="/ebeveyn-egitim">Ebeveynler</a>
+                        <a href="/egitim/ebeveynler">Ebeveynler</a>
                     </DropdownMenuItem>
 
                     <DropdownMenuItem>
-                        <a href="/ogrenci-egitim">Öğrenciler</a>
+                        <a href="/egitim/ogrenciler">Öğrenciler</a>
                     </DropdownMenuItem>
 
                     <DropdownMenuItem>
-                        <a href="/ogretmen-egitim">Öğretmenler</a>
+                        <a href="/egitim/ogretmenler">Öğretmenler</a>
                     </DropdownMenuItem>
 
                 </DropdownMenuContent>
