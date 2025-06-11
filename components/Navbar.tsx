@@ -5,8 +5,6 @@ import {
   DropdownMenu,
   DropdownMenuItem,
   DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
@@ -58,30 +56,30 @@ const Navbar = () => {
             <DropdownMenu>
 
                 <DropdownMenuTrigger className='flex items-center gap-2 cursor-pointer'>
-                    <span>Nasıl Katkı Sağlarsınız</span>
+                    <span>Nasıl Katki Sağlarsınız</span>
                     <IoIosArrowDown />
                 </DropdownMenuTrigger>
 
                 <DropdownMenuContent>
 
                     <DropdownMenuItem>
-                        <a href="/katkı/genel-rehber">Genel Rehber</a>
+                        <a href="/katki">Genel Rehber</a>
                     </DropdownMenuItem>
 
                     <DropdownMenuItem>
-                        <a href="/katkı/yazılım">Yazılım</a>
+                        <a href="/katki/yazılım">Yazılım</a>
                     </DropdownMenuItem>
 
                     <DropdownMenuItem>
-                        <a href="/katkı/tasarım">Tasarım</a>
+                        <a href="/katki/tasarim">Tasarım</a>
                     </DropdownMenuItem>
 
                     <DropdownMenuItem>
-                        <a href="/katkı/icerik-uret">İçerik Üret</a>
+                        <a href="/katki/icerik-uret">İçerik Üret</a>
                     </DropdownMenuItem>
 
                     <DropdownMenuItem>
-                        <a href="/katkı/paylas">Paylaş</a>
+                        <a href="/katki/paylas">Paylaş</a>
                     </DropdownMenuItem>
 
                 </DropdownMenuContent>

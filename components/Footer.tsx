@@ -23,7 +23,7 @@ const Footer = () => {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 border rounded-md hover:bg-gray-100"
+              className="flex items-center gap-2 px-4 py-2 border rounded-md hover:-translate-y-0.5 transition-all"
             >
               <FaGithub className="text-xl" /> GitHub
             </a>
@@ -31,7 +31,7 @@ const Footer = () => {
               href="https://medium.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 border rounded-md hover:bg-gray-100"
+              className="flex items-center gap-2 px-4 py-2 border rounded-md hover:-translate-y-0.5 transition-all"
             >
               <FaMedium className="text-xl" /> Medium
             </a>
@@ -39,7 +39,7 @@ const Footer = () => {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 border rounded-md hover:bg-gray-100"
+              className="flex items-center gap-2 px-4 py-2 border rounded-md hover:-translate-y-0.5 transition-all"
             >
               <FaLinkedin className="text-xl" /> LinkedIn
             </a>
@@ -47,7 +47,7 @@ const Footer = () => {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 border rounded-md hover:bg-gray-100"
+              className="flex items-center gap-2 px-4 py-2 border rounded-md hover:-translate-y-0.5 transition-all"
             >
               <FaInstagram className="text-xl" /> Instagram
             </a>
@@ -63,7 +63,7 @@ const Footer = () => {
             <a href="/" className={footerLink}>Ana Sayfa</a>
             <a href="/hakkimizda" className={footerLink}>Neler Yapıyoruz?</a>
             <a href="/cocuk-egitim" className={footerLink}>Eğitimler</a>
-            <a href="/katkı/genel-rehber" className={footerLink}>Katkı Rehberi</a>
+            <a href="/katki" className={footerLink}>Katkı Rehberi</a>
             <a href="/iletisim" className={footerLink}>İletişim</a>
           </div>
 
