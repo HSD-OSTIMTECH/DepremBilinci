@@ -56,7 +56,7 @@ const Navbar = () => {
             <DropdownMenu>
 
                 <DropdownMenuTrigger className='flex items-center gap-2 cursor-pointer'>
-                    <span>Nasıl Katki Sağlarsınız</span>
+                    <span>Nasıl Katkı Sağlarsınız</span>
                     <IoIosArrowDown />
                 </DropdownMenuTrigger>
 
