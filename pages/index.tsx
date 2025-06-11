@@ -122,7 +122,7 @@ export default function Home() {
                   GitHub’da Yıldızla
                 </a>
                 <a
-                  href="/katki/genel-rehber"
+                  href="/katki"
                   className="border border-primary text-primary px-6 py-2 rounded-md hover:-translate-y-0.5 transition-all"
                 >
                   Katkı Rehberini İncele
