@@ -117,13 +117,13 @@ export default function Home() {
                   href="https://github.com/hsd-ostimtech/deprembilinci"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-primary text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition"
+                  className="bg-primary text-white px-6 py-2 rounded-md hover:-translate-y-0.5 transition-all"
                 >
                   GitHub’da Yıldızla
                 </a>
                 <a
                   href="/katki/genel-rehber"
-                  className="border border-primary text-primary px-6 py-2 rounded-md hover:bg-gray-100 transition"
+                  className="border border-primary text-primary px-6 py-2 rounded-md hover:-translate-y-0.5 transition-all"
                 >
                   Katkı Rehberini İncele
                 </a>
