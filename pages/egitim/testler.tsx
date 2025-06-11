@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { PiStudentBold, PiChalkboardTeacherBold, PiUsersThreeBold } from "react-icons/pi";
 import { FaChild } from "react-icons/fa";
-import sorularData from "../../sorular.json"; // yolu senin yapına göre düzenle
+import sorularData from "../../sorular.json"; 
+import toast from "react-hot-toast";
 
-// Kategori tipleri
 type Kategori = "ogrenci" | "ogretmen" | "ebeveyn" | "cocuk";
 
 type Soru = {
@@ -19,7 +19,6 @@ const kategoriler: { id: Kategori; label: string; icon: React.ReactNode; link: s
   { id: "cocuk", label: "Çocuklar", icon: <FaChild className="text-3xl mb-3" />, link: "/egitim/cocuklar", desc: "için hazırlanmış testler" }
 ];
 
-// Diziyi karıştıran yardımcı fonksiyon
 const shuffleArray = <T,>(array: T[]): T[] => {
   return [...array].sort(() => Math.random() - 0.5);
 };
@@ -28,11 +27,15 @@ const Testler: React.FC = () => {
   const [aktifKategori, setAktifKategori] = useState<Kategori | null>(null);
   const [modalAcik, setModalAcik] = useState(false);
   const [sorular, setSorular] = useState<Soru[]>([]);
+  const [secimler, setSecimler] = useState<(string | null)[]>([]);
+  const [sonuc, setSonuc] = useState<{ dogru: number; toplam: number } | null>(null);
 
   const modalKapat = () => {
     setModalAcik(false);
     setAktifKategori(null);
     setSorular([]);
+    setSecimler([]);
+    setSonuc(null);
   };
 
   const kategoriSecildi = (kat: Kategori) => {
@@ -47,8 +50,30 @@ const Testler: React.FC = () => {
     }));
 
     setSorular(karisikSorular);
+    setSecimler(Array(karisikSorular.length).fill(null));
+    setSonuc(null);
     setAktifKategori(kat);
     setModalAcik(true);
+  };
+
+  const secenekSec = (soruIndex: number, secenek: string) => {
+    setSecimler((prev) => {
+      const yeni = [...prev];
+      yeni[soruIndex] = secenek;
+      return yeni;
+    });
+  };
+
+  const sonucuGoster = () => {
+    if (secimler.some((s) => s === null)) {
+      toast.error("Lütfen tüm sorular için bir seçenek işaretleyin.");
+      return;
+    }
+    let dogru = 0;
+    sorular.forEach((soru, i) => {
+      if (secimler[i] === soru.dogru) dogru++;
+    });
+    setSonuc({ dogru, toplam: sorular.length });
   };
 
   return (
@@ -92,10 +117,10 @@ const Testler: React.FC = () => {
       {/* Modal */}
       {modalAcik && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-full max-w-lg shadow-lg relative max-h-[90vh] overflow-y-auto">
+          <div className="bg-white rounded-lg p-6 w-full max-w-6xl shadow-lg relative max-h-[90vh] overflow-y-auto">
             <button
               onClick={modalKapat}
-              className="absolute top-2 right-3 text-neutral-500  max-w-2xlhover:text-red-500 text-xl"
+              className="absolute top-2 right-3 text-neutral-500 hover:text-red-500 text-xl"
             >
               &times;
             </button>
@@ -110,12 +135,60 @@ const Testler: React.FC = () => {
                   <p className="font-semibold mb-2">{i + 1}. {soru.soru}</p>
                   <ul className="space-y-2">
                     {soru.secenekler.map((secenek, j) => (
-                      <li key={j} className="pl-4">– {secenek}</li>
+                      <li key={j}>
+                        <label className="flex items-center gap-2 cursor-pointer">
+                          <input
+                            type="radio"
+                            name={`soru-${i}`}
+                            value={secenek}
+                            checked={secimler[i] === secenek}
+                            onChange={() => secenekSec(i, secenek)}
+                            className="accent-primary"
+                            disabled={!!sonuc}
+                          />
+                          <span
+                            className={
+                              sonuc
+                                ? secenek === soru.dogru
+                                  ? "font-semibold text-green-600"
+                                  : secimler[i] === secenek
+                                  ? "font-semibold text-red-600"
+                                  : ""
+                                : ""
+                            }
+                          >
+                            {secenek}
+                          </span>
+                        </label>
+                      </li>
                     ))}
                   </ul>
                 </div>
               ))}
             </div>
+
+            {!sonuc && (
+              <button
+                onClick={sonucuGoster}
+                className="mt-8 w-full px-4 py-2 rounded bg-primary text-background cursor-pointer font-semibold hover:-translate-y-0.5 transition"
+              >
+                Sonucu Göster
+              </button>
+            )}
+
+            {sonuc && (
+              <div className="mt-6 text-center">
+                <p className="text-lg font-bold text-primary">
+                  Doğru Sayısı: {sonuc.dogru} / {sonuc.toplam}
+                </p>
+                <button
+                  onClick={modalKapat}
+                  className="mt-4 px-4 py-2 rounded bg-primary text-background cursor-pointer font-semibold hover:-translate-y-0.5 transition"
+                >
+                  Kapat
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}
