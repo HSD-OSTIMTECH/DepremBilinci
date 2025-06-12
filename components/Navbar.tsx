@@ -67,7 +67,7 @@ const Navbar = () => {
                     </DropdownMenuItem>
 
                     <DropdownMenuItem>
-                        <a href="/katki/yazılım">Yazılım</a>
+                        <a href="/katki/yazilim">Yazılım</a>
                     </DropdownMenuItem>
 
                     <DropdownMenuItem>
