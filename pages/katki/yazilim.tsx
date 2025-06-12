@@ -2,8 +2,8 @@ import React from "react";
 
 const KatkiYazilim = () => {
     return (
-        <main className="min-h-screen bg-gradient-to-br from-sage/30 to-sage/10 rounded-lg py-24 px-4">
-            <section className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
+        <main className="min-h-screen py-12 px-4">
+            <section className="max-w-3xl mx-auto rounded-lg border border-neutral-400 p-8">
                 <h1 className="text-2xl font-semibold text-primary mb-4">
                     Yazılım Katkısı ile Deprem Bilinci’ni Güçlendirin
                 </h1>
@@ -28,7 +28,7 @@ const KatkiYazilim = () => {
                                     {" "}
                                     Karşılaştığınız hataları veya eksiklikleri{" "}
                                     <a
-                                        href="https://github.com/"
+                                        href="https://github.com/HSD-OSTIMTECH/DepremBilinci/issues"
                                         className="text-sage underline"
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -148,7 +148,7 @@ const KatkiYazilim = () => {
                         <li>
                             Katkı rehberimizi ve kodlama standartlarımızı{" "}
                             <a
-                                href="https://github.com/"
+                                href="https://github.com/HSD-OSTIMTECH/DepremBilinci/blob/main/Katk%C4%B1daBulunmaRehberi.md"
                                 className="text-sage underline"
                                 target="_blank"
                                 rel="noopener noreferrer"
