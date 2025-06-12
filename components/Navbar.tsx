@@ -85,8 +85,6 @@ const Navbar = () => {
                 </DropdownMenuContent>
 
             </DropdownMenu>
-
-            <a href="/iletisim" className='px-6 py-2 rounded-sm bg-primary text-background hover:-translate-y-0.5 transition-all'>İletişim</a>
         </div>
 
     </nav>
