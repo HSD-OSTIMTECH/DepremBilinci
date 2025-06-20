@@ -1,5 +1,4 @@
 import {
-  FaChild,
   FaExclamationTriangle,
   FaShoppingBag,
   FaSmileBeam,
