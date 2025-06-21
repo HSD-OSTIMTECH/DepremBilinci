@@ -7,10 +7,10 @@ import {
 
 export default function Cocuk() {
   return (
-    <div className="my-20 px-4">
+    <div className="my-6 sm:my-20 px-4">
       {/* Başlık */}
       <header className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6 leading-tight">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-primary mb-6 leading-tight">
           Deprem Bilincini Çocuklarla Birlikte Güçlendirelim!
         </h1>
         <p className="text-neutral-700 text-lg md:text-xl max-w-2xl mx-auto">

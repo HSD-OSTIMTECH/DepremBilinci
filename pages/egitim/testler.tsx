@@ -77,7 +77,7 @@ const Testler: React.FC = () => {
   };
 
   return (
-    <div className="py-16">
+    <div className="px-8 sm:px-0 py-16">
       <section className="mb-10">
         <h1 className="text-2xl font-semibold mb-4 text-primary">Kendinizi Test Edin</h1>
         <p className="mb-4 text-neutral-700 max-w-2xl">
@@ -116,7 +116,7 @@ const Testler: React.FC = () => {
 
       {/* Modal */}
       {modalAcik && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+        <div className="px-8 sm:px-0 fixed inset-0 bg-black/40 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-6xl shadow-lg relative max-h-[90vh] overflow-y-auto">
             <button
               onClick={modalKapat}
