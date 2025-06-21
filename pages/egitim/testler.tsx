@@ -3,6 +3,7 @@ import { PiStudentBold, PiChalkboardTeacherBold, PiUsersThreeBold } from "react-
 import { FaChild } from "react-icons/fa";
 import sorularData from "../../sorular.json"; 
 import toast from "react-hot-toast";
+import { supabase } from '@/lib/supabaseClient'
 
 type Kategori = "ogrenci" | "ogretmen" | "ebeveyn" | "cocuk";
 
@@ -30,6 +31,7 @@ const Testler: React.FC = () => {
   const [secimler, setSecimler] = useState<(string | null)[]>([]);
   const [sonuc, setSonuc] = useState<{ dogru: number; toplam: number } | null>(null);
 
+  
   const modalKapat = () => {
     setModalAcik(false);
     setAktifKategori(null);
@@ -64,17 +66,55 @@ const Testler: React.FC = () => {
     });
   };
 
-  const sonucuGoster = () => {
+  const sonucuGoster = async () => {
     if (secimler.some((s) => s === null)) {
       toast.error("Lütfen tüm sorular için bir seçenek işaretleyin.");
       return;
     }
+
     let dogru = 0;
     sorular.forEach((soru, i) => {
       if (secimler[i] === soru.dogru) dogru++;
     });
+
+    try {
+      const { data: { session } } = await supabase.auth.getSession()
+      
+      if (!session) {
+        toast.error('Test sonuçlarını kaydetmek için giriş yapmalısınız')
+        return
+      }
+
+      // Save test result to database
+      const { error } = await supabase
+        .from('test_results')
+        .insert([
+          {
+            user_id: session.user.id,
+            test_name: `${aktifKategori} Testi`,
+            score: dogru,
+            total_questions: sorular.length,
+            category: aktifKategori || 'genel',
+            answers: secimler, // Optional: store user's answers
+            questions: sorular.map(s => s.soru) // Optional: store questions
+          }
+        ])
+
+      if (error) {
+        console.error('Error saving test result:', error)
+        toast.error('Test sonucu kaydedilirken bir hata oluştu')
+      } else {
+        toast.success('Test sonucunuz kaydedildi')
+      }
+
+    } catch (error) {
+      console.error('Error:', error)
+      toast.error('Bir hata oluştu')
+    }
+
     setSonuc({ dogru, toplam: sorular.length });
   };
+
 
   return (
     <div className="px-8 sm:px-0 py-16">
