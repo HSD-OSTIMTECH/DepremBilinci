@@ -4,8 +4,10 @@ import {
   FaSmileBeam,
   FaLightbulb,
 } from "react-icons/fa";
+import EgitimLayout from "@/components/EgitimLayout";
 
-export default function Cocuk() {
+
+function Cocuk() {
   return (
     <div className="my-6 sm:my-20 px-4">
       {/* Başlık */}
@@ -147,3 +149,9 @@ export default function Cocuk() {
     </div>
   );
 }
+
+Cocuk.getLayout = function getLayout(page: React.ReactElement) {
+  return <EgitimLayout>{page}</EgitimLayout>;
+};
+
+export default Cocuk;
