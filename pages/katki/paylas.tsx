@@ -19,7 +19,7 @@ const Paylas = () => {
                     </h2>
                     <ul className="space-y-4 mt-6">
                         <li className="flex items-start">
-                            <span className="inline-block w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
+                            <span className="w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
                                 1
                             </span>
                             <div>
@@ -31,7 +31,7 @@ const Paylas = () => {
                             </div>
                         </li>
                         <li className="flex items-start">
-                            <span className="inline-block w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
+                            <span className="w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
                                 2
                             </span>
                             <div>
@@ -43,7 +43,7 @@ const Paylas = () => {
                             </div>
                         </li>
                         <li className="flex items-start">
-                            <span className="inline-block w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
+                            <span className="w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
                                 3
                             </span>
                             <div>
@@ -55,7 +55,7 @@ const Paylas = () => {
                             </div>
                         </li>
                         <li className="flex items-start">
-                            <span className="inline-block w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
+                            <span className="w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
                                 4
                             </span>
                             <div>
@@ -67,7 +67,7 @@ const Paylas = () => {
                             </div>
                         </li>
                         <li className="flex items-start">
-                            <span className="inline-block w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
+                            <span className="w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
                                 5
                             </span>
                             <div>

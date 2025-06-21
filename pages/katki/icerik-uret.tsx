@@ -3,7 +3,7 @@ import React from "react";
 const IcerikUret = () => {
     return (
         <main className="min-h-screen py-12 px-4">
-            <section className="max-w-3xl mx-auto rounded-lg border border-neutral-400 p-8 bg-white">
+            <section className="max-w-3xl mx-auto rounded-lg border border-neutral-400 p-8">
                 <h1 className="text-2xl font-semibold text-primary mb-4">
                     İçerik Üreterek Deprem Bilinci’ni Güçlendirin
                 </h1>
@@ -20,7 +20,7 @@ const IcerikUret = () => {
                     </h2>
                     <ul className="space-y-4 mt-6">
                         <li className="flex items-start">
-                            <span className="inline-block w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
+                            <span className="w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
                                 1
                             </span>
                             <div>
@@ -33,7 +33,7 @@ const IcerikUret = () => {
                             </div>
                         </li>
                         <li className="flex items-start">
-                            <span className="inline-block w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
+                            <span className="w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
                                 2
                             </span>
                             <div>
@@ -46,7 +46,7 @@ const IcerikUret = () => {
                             </div>
                         </li>
                         <li className="flex items-start">
-                            <span className="inline-block w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
+                            <span className="w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
                                 3
                             </span>
                             <div>
@@ -59,7 +59,7 @@ const IcerikUret = () => {
                             </div>
                         </li>
                         <li className="flex items-start">
-                            <span className="inline-block w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
+                            <span className="w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
                                 4
                             </span>
                             <div>
@@ -72,7 +72,7 @@ const IcerikUret = () => {
                             </div>
                         </li>
                         <li className="flex items-start">
-                            <span className="inline-block w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
+                            <span className="w-8 h-8 bg-sage/20 text-primary rounded-full flex items-center justify-center mr-3 font-bold">
                                 5
                             </span>
                             <div>

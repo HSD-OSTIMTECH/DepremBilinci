@@ -19,7 +19,7 @@ const KatkiYazilim = () => {
                     </h2>
                     <ul className="space-y-4 mt-6">
                         <li className="flex items-start">
-                            <span className="inline-block w-8 h-8 bg-sage/20 text-primary rounded-full -center justify-center mr-3 font-bold">
+                            <span className="inline-block w-8 h-8 bg-sage/20 text-primary rounded-full items-center justify-center mr-3 font-bold">
                                 1
                             </span>
                             <div>

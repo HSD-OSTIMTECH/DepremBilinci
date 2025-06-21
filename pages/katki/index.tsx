@@ -2,7 +2,7 @@ import React from 'react'
 
 const KatkiRehberi = () => {
   return (
-    <div className="flex items-center justify-between my-32 gap-8">
+    <div className="flex flex-col md:flex-row items-start justify-between px-4 md:px-8 my-16 md:my-32 gap-8">
 
         <section className="mb-10 border border-neutral-400 rounded-xl p-6">
             <h1 className="text-2xl font-bold mb-4 text-primary">Katkı Türleri</h1>
