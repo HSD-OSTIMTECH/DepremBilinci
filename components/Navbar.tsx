@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
-import { IoIosArrowDown } from "react-icons/io";
-import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
+import React, { useState, useEffect } from 'react'
+import { IoIosArrowDown } from "react-icons/io"
+import { RiMenu3Line, RiCloseLine, RiUserLine } from "react-icons/ri"
+import { supabase } from '@/lib/supabaseClient'
+import { useRouter } from 'next/router'
+import type { Session } from '@supabase/supabase-js'
 
 import {
   DropdownMenu,
@@ -10,20 +13,43 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [session, setSession] = useState<Session | null>(null)
+  const router = useRouter()
+
+  useEffect(() => {
+    // Check and set initial session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session)
+    })
+
+    // Listen for auth changes
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
+    })
+
+    return () => subscription.unsubscribe()
+  }, [])
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut()
+    router.push('/')
+  }
 
   return (
     <nav className='px-6 sm:px-0 py-6'>
       <div className='flex items-center justify-between'>
         {/* Logo */}
         <div className='flex items-center gap-2'>
-          <img src="/Logos/Logo.png" alt="icon for logo" />
-          <span className='text-lg font-bold text-primary'>DepremBilinci</span>
+          <img src="/Logos/Logo.png" alt="icon for logo" className="h-4 sm:h-8 w-4 sm:w-8" />
+          <span className='text-sm sm:text-lg font-bold text-primary'>DepremBilinci</span>
         </div>
 
         {/* Desktop Menu */}
         <div className='hidden md:flex items-center gap-6 font-medium'>
-          <a href="/">Ana Sayfa</a>
+          <a href="/" className="hover:text-primary transition-colors">Ana Sayfa</a>
 
           <DropdownMenu>
             <DropdownMenuTrigger className='flex items-center gap-2 cursor-pointer'>
@@ -72,15 +98,94 @@ const Navbar = () => {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+
+          {/* Auth Buttons */}
+          {session ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger className='flex items-center gap-2 cursor-pointer'>
+                <RiUserLine className="text-lg" />
+                <span>Hesabınız</span>
+                <IoIosArrowDown />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>
+                  <span className="text-sm text-gray-600">
+                    {session.user.email}
+                  </span>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a href="/profil">Profil</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <button 
+                    onClick={handleLogout}
+                    className="text-red-600 hover:text-red-700 transition-colors"
+                  >
+                    Çıkış Yap
+                  </button>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <div className="flex items-center gap-4">
+              <a 
+                href="/login"
+                className="px-4 py-2 rounded-md text-primary hover:bg-primary/5 transition-colors"
+              >
+                Giriş Yap
+              </a>
+              <a 
+                href="/register"
+                className="px-4 py-2 rounded-md bg-primary text-white hover:bg-primary/90 transition-colors"
+              >
+                Kayıt Ol
+              </a>
+            </div>
+          )}
         </div>
 
-        {/* Mobile Menu Button */}
-        <button 
-          className='md:hidden text-2xl'
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <RiCloseLine /> : <RiMenu3Line />}
-        </button>
+        {/* Mobile Menu Button and Auth */}
+        <div className="md:hidden flex items-center gap-4">
+          {session ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger className='flex items-center gap-1'>
+                <RiUserLine className="text-lg" />
+                <IoIosArrowDown />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>
+                  <span className="text-sm text-gray-600">
+                    {session.user.email}
+                  </span>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <a href="/profil">Profil</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <button 
+                    onClick={handleLogout}
+                    className="text-red-600 hover:text-red-700 transition-colors"
+                  >
+                    Çıkış Yap
+                  </button>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <a 
+              href="/login"
+              className="px-3 py-1.5 text-sm rounded-md bg-primary text-white hover:bg-primary/90 transition-colors"
+            >
+              Giriş
+            </a>
+          )}
+          <button 
+            className='text-2xl'
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <RiCloseLine /> : <RiMenu3Line />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
