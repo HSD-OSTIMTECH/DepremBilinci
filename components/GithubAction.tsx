@@ -1,44 +1,13 @@
-import React, { useEffect, useState } from "react";
 
-// GitHub API'den dönen user tipi
-type GithubUser = {
-  id: number;
-  login: string;
-  avatar_url: string;
-  html_url: string;
-};
 
-const GithubAction: React.FC = () => {
-  const [members, setMembers] = useState<GithubUser[]>([]);
-
-  useEffect(() => {
-    fetch("https://api.github.com/orgs/hsd-ostimtech/members")
-      .then((res) => res.json())
-      .then((data: GithubUser[]) => setMembers(data))
-      .catch((err) => console.error("GitHub verisi alınamadı:", err));
-  }, []);
+const GithubAction = () => {
 
   return (
-    <div className="px-4 py-32 flex flex-col md:flex-row items-center justify-between">
+    <div className="py-32 flex flex-col md:flex-row items-center justify-between">
 
       {/* Üyelerin avatarları */}
       <div className="flex flex-wrap gap-4 mb-8">
-        {members.map((member) => (
-          <a
-            key={member.id}
-            href={member.html_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:scale-105 transition-transform"
-          >
-            <img
-              src={member.avatar_url}
-              alt={member.login}
-              title={member.login}
-              className="w-16 h-16 rounded-full border"
-            />
-          </a>
-        ))}
+        <img src="/Images/deprembilinci.png" alt="deprembilinci" className="rounded-2xl"/>
       </div>
 
       {/* Açıklama */}
