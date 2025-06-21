@@ -4,18 +4,26 @@ import { useRouter } from 'next/router'
 import toast from 'react-hot-toast'
 import { z } from 'zod'
 
-// Validation schema
-const loginSchema = z.object({
+// Validation schema with password confirmation
+const registerSchema = z.object({
   email: z.string().email('Geçerli bir email adresi giriniz'),
-  password: z.string().min(6, 'Şifre en az 6 karakter olmalıdır')
+  password: z.string()
+    .min(6, 'Şifre en az 6 karakter olmalıdır')
+    .regex(/[A-Z]/, 'Şifre en az bir büyük harf içermelidir')
+    .regex(/[0-9]/, 'Şifre en az bir rakam içermelidir'),
+  passwordConfirm: z.string()
+}).refine((data) => data.password === data.passwordConfirm, {
+  message: "Şifreler eşleşmiyor",
+  path: ["passwordConfirm"]
 })
 
-const Login = () => {
+const Register = () => {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     email: '',
-    password: ''
+    password: '',
+    passwordConfirm: ''
   })
 
   // Check if user is already logged in
@@ -42,18 +50,18 @@ const Login = () => {
     
     try {
       // Validate form data
-      loginSchema.parse(formData)
+      registerSchema.parse(formData)
       
       setLoading(true)
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signUp({
         email: formData.email,
         password: formData.password,
       })
 
       if (error) throw error
 
-      toast.success('Başarıyla giriş yapıldı')
-      router.push('/')
+      toast.success('Kayıt başarılı! Giriş yapmak için lütfen e-postanızı kontrol edin.')
+      router.push('/login')
       
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -61,7 +69,7 @@ const Login = () => {
           toast.error(err.message)
         })
       } else {
-        toast.error('Giriş yapılırken bir hata oluştu')
+        toast.error('Kayıt olurken bir hata oluştu')
       }
     } finally {
       setLoading(false)
@@ -73,7 +81,7 @@ const Login = () => {
       <div className="w-full max-w-md">
         <div className="mb-8">
           <h2 className="text-center text-2xl font-medium text-gray-800">
-            Hesabınıza giriş yapın
+            Yeni hesap oluşturun
           </h2>
         </div>
 
@@ -110,6 +118,22 @@ const Login = () => {
                 onChange={handleChange}
               />
             </div>
+
+            <div>
+              <label htmlFor="passwordConfirm" className="block text-sm font-medium text-gray-700 mb-1">
+                Şifre Tekrar
+              </label>
+              <input
+                id="passwordConfirm"
+                name="passwordConfirm"
+                type="password"
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors"
+                placeholder="••••••••"
+                value={formData.passwordConfirm}
+                onChange={handleChange}
+              />
+            </div>
           </div>
 
           <button
@@ -117,16 +141,16 @@ const Login = () => {
             disabled={loading}
             className="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-md text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
-            {loading ? 'Giriş yapılıyor...' : 'Giriş Yap'}
+            {loading ? 'Kayıt yapılıyor...' : 'Kayıt Ol'}
           </button>
         </form>
+        
         <span className='text-neutral-600 block mt-4'>
-            Daha kayıt olmadınız mı?  <a href="/register" className='underline text-primary hover:text-primary/70 transition-colors'>Kayıt Olun</a>
+          Zaten hesabınız var mı? <a href="/login" className='underline text-primary hover:text-primary/70 transition-colors'>Giriş Yapın</a>
         </span>
-
       </div>
     </div>
   )
 }
 
-export default Login
+export default Register
