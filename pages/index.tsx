@@ -9,10 +9,10 @@ import GithubAction from "@/components/GithubAction";
 
 export default function Home() {
   return (
-    <div className="my-24">
+    <div className="px-6 sm:px-0 my-2 sm:my-24">
 
         {/*Hero Section*/}
-        <section className="flex flex-col items-center justify-center px-4 text-center py-32">
+        <section className="flex flex-col items-center justify-center px-4 text-center py-4 sm:py-32">
           <h1 className="text-2xl md:text-4xl font-bold text-primary mb-4">
             Depremlere Bilinçli Hazırlık, Herkes İçin<br />Erişilebilir Eğitimle Mümkün.
           </h1>
@@ -41,7 +41,7 @@ export default function Home() {
         </section>
 
         {/* Eğitim Kataloğumuz*/}
-        <section className="py-48">
+        <section className="py-16 sm:py-48">
 
           <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-2">Eğitim Kataloğumuz</h2>
           <p className="text-neutral-700 mb-8">
@@ -103,7 +103,7 @@ export default function Home() {
         <GithubAction/>
 
         {/* Destek Olun */}
-        <section className="px-4 py-32">
+        <section className="px-4 py-4 sm:py-32">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Sol metin alanı */}
             <div>
